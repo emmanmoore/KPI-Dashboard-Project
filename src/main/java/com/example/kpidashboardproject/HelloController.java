@@ -8,7 +8,6 @@ import javafx.fxml.FXML;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Label;
 import javafx.scene.chart.LineChart;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -124,16 +123,6 @@ public class HelloController {
 
     @FXML
     private AnchorPane TopSplitPaneRightAnchor;
-
-    /*
-        Defining the x and y axes
-     */
-    final NumberAxis xAxis = new NumberAxis();
-    final NumberAxis yAxis = new NumberAxis();
-
-    /*
-        Setting the labels for the axes
-     */
 
 //    LineChart<Number,Number lineChart = new LineChart<Number,Number>(xAxis,yAxis);
 //
