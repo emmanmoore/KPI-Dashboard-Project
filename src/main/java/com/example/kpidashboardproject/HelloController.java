@@ -1,6 +1,5 @@
 package com.example.kpidashboardproject;
 
-
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.NumberFormat;
@@ -8,6 +7,15 @@ import java.text.NumberFormat;
 import javafx.fxml.FXML;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Label;
+import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.control.SplitPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Text;
+
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -16,11 +24,117 @@ import javafx.scene.control.TextField;
 
 public class HelloController {
     /*
+        FXML defined Variable Declarations
+     */
+    @FXML
+    private LineChart<?, ?> ACPSLineChart;
+
+    @FXML
+    private NumberAxis ACPSLineChartX;
+
+    @FXML
+    private NumberAxis ACPSLineChartY;
+
+    @FXML
+    private Rectangle ACPSRectangle;
+
+    @FXML
+    private LineChart<?, ?> ALCRLineChart;
+
+    @FXML
+    private NumberAxis ALCRLineChartX;
+
+    @FXML
+    private NumberAxis ALCRLineChartY;
+
+    @FXML
+    private Rectangle ALCRRectangle;
+
+    @FXML
+    private Rectangle ASFRectangle;
+
+    @FXML
+    private LineChart<?, ?> ATMLineChart;
+
+    @FXML
+    private NumberAxis ATMLineChartX;
+
+    @FXML
+    private NumberAxis ATMLineChartY;
+
+    @FXML
+    private Rectangle ATMRectangle;
+
+    @FXML
+    private Rectangle BackgroundGray;
+
+    @FXML
+    private BorderPane BorderPane;
+
+    @FXML
+    private Pane CenterPane;
+
+    @FXML
+    private Text DashboardTitleText;
+
+    @FXML
+    private LineChart<?, ?> HomesSoldLineChart;
+
+    @FXML
+    private NumberAxis HomesSoldLineChartX;
+
+    @FXML
+    private NumberAxis HomesSoldLineChartY;
+
+    @FXML
+    private Rectangle HomesSoldRectangle;
+
+    @FXML
+    private Rectangle HomesSoldRectangle1;
+
+    @FXML
+    private Rectangle KPIDashTeal;
+
+    @FXML
+    private Text KPITitleText;
+
+    @FXML
+    private LineChart<?, ?> LCLineChart;
+
+    @FXML
+    private NumberAxis LCLineChartX;
+
+    @FXML
+    private NumberAxis LCLineChartY;
+
+    @FXML
+    private Rectangle LCRectangle;
+
+    @FXML
+    private Rectangle RealEstateTeal;
+
+    @FXML
+    private Text RealEstateTitleText;
+
+    @FXML
+    private SplitPane TopSplitPane;
+
+    @FXML
+    private AnchorPane TopSplitPaneLeftAnchor;
+
+    @FXML
+    private AnchorPane TopSplitPaneRightAnchor;
+
+    /*
         Defining the x and y axes
      */
     final NumberAxis xAxis = new NumberAxis();
     final NumberAxis yAxis = new NumberAxis();
-//
+
+    /*
+        Setting the labels for the axes
+     */
+
 //    LineChart<Number,Number lineChart = new LineChart<Number,Number>(xAxis,yAxis);
 //
 //    XYChart.Series series = new XYChart.Series();
@@ -30,19 +144,6 @@ public class HelloController {
 //    }
 //    lineChart.getData().add(series);
 
-    //fx:ids for JAVAFX file:
-    //appointment-listing conversion rate: ALCRLineChart
-    //average commission per sale: ACPSLineChart
-    //average square foot: ASFLineChartY
-    //average price per square foot: ASFPriceLineChart
-    //listings closed: LCLineChart
-    //average time on market: ATMLineChart
-    //percentage of homes sold from inventory: HomesSoldLineChart
-    //toggle view button: ToggleViewButton
-    //KPI in title "kpi dashboard": KPITitleText
-    //dashboard in title "kpi dashboard": DashboardTitleText
-    //12 month real estate analysis title: RealEstateTitleText
-    //background rectangle for average commission per sale: ACPSRectangle
 
     private static final NumberFormat currency = NumberFormat.getCurrencyInstance();
     private static final NumberFormat percent = NumberFormat.getPercentInstance();
