@@ -6,6 +6,7 @@ import java.math.RoundingMode;
 import java.text.NumberFormat;
 
 import javafx.fxml.FXML;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.control.Label;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -14,8 +15,11 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 
 public class HelloController {
-//    final NumberAxis xAxis = new NumberAxis();
-//    final NumberAxis yAxis = new NumberAxis();
+    /*
+        Defining the x and y axes
+     */
+    final NumberAxis xAxis = new NumberAxis();
+    final NumberAxis yAxis = new NumberAxis();
 //
 //    LineChart<Number,Number lineChart = new LineChart<Number,Number>(xAxis,yAxis);
 //
