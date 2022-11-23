@@ -14,7 +14,7 @@
 
 <BorderPane fx:id="BorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="741.0" prefWidth="1327.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <top>
-      <SplitPane fx:id="TopSplitPane" dividerPositions="0.21707538601271567" prefHeight="114.0" prefWidth="882.0" BorderPane.alignment="CENTER">
+      <SplitPane fx:id="TopSplitPane" disable="true" dividerPositions="0.21707538601271567" prefHeight="114.0" prefWidth="882.0" BorderPane.alignment="CENTER">
         <items>
           <AnchorPane fx:id="TopSplitPaneLeftAnchor" minHeight="0.0" minWidth="0.0" prefHeight="158.0" prefWidth="197.0">
                <children>
@@ -69,7 +69,53 @@
       <Pane fx:id="CenterPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Rectangle fx:id="BackgroundGray" arcHeight="5.0" arcWidth="5.0" fill="#ececec" height="633.0" layoutX="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1333.0" />
-            <Rectangle fx:id="ACPSRectangle" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" layoutX="59.0" layoutY="30.0" stroke="TRANSPARENT" strokeType="INSIDE" width="593.0">
+            <SplitPane fx:id="LCSplitPane" dividerPositions="0.9221" layoutX="888.0" layoutY="303.0" orientation="VERTICAL" prefHeight="248.0" prefWidth="415.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Rectangle fx:id="LCRectangle" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" stroke="TRANSPARENT" strokeType="INSIDE" width="415.0">
+                           <effect>
+                              <DropShadow offsetX="5.0" offsetY="5.0">
+                                 <color>
+                                    <Color opacity="0.25" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Rectangle>
+                        <LineChart fx:id="LCLineChart" prefHeight="221.0" prefWidth="404.0" title="Listings Closed">
+                           <xAxis>
+                              <NumberAxis fx:id="LCLineChartX" minorTickLength="0.0" side="BOTTOM" tickLabelGap="1.0" tickUnit="1.0" upperBound="11.0" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis fx:id="LCLineChartY" label="# of Houses" side="LEFT" upperBound="175.0" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Rectangle fx:id="LCRectangle1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" stroke="TRANSPARENT" strokeType="INSIDE" width="415.0">
+                           <effect>
+                              <DropShadow offsetX="5.0" offsetY="5.0">
+                                 <color>
+                                    <Color opacity="0.25" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Rectangle>
+                        <Text fx:id="LCInfoTitle" layoutX="157.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info On Graph Contents" textAlignment="CENTER" wrappingWidth="118.13668823242188">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="LCInfo" layoutX="51.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." wrappingWidth="331.9080832004547">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+              </items>
                <effect>
                   <DropShadow offsetX="5.0" offsetY="5.0">
                      <color>
@@ -77,67 +123,173 @@
                      </color>
                   </DropShadow>
                </effect>
-            </Rectangle>
-            <Rectangle fx:id="ALCRRectangle" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" layoutX="672.0" layoutY="30.0" stroke="TRANSPARENT" strokeType="INSIDE" width="593.0">
+            </SplitPane>
+            <SplitPane fx:id="ALCRSplitPane" dividerPositions="0.9221" layoutX="673.0" layoutY="30.0" orientation="VERTICAL" prefHeight="255.0" prefWidth="593.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Rectangle fx:id="ALCRRectangle" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" stroke="TRANSPARENT" strokeType="INSIDE" width="593.0">
+                           <effect>
+                              <DropShadow offsetX="5.0" offsetY="5.0">
+                                 <color>
+                                    <Color opacity="0.25" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Rectangle>
+                        <LineChart fx:id="ALCRLineChart" prefHeight="223.0" prefWidth="575.0" title="Appointment-Listing Conversion Rate">
+                           <xAxis>
+                              <NumberAxis fx:id="ALCRLineChartX" minorTickLength="0.0" prefHeight="12.0" prefWidth="413.0" side="BOTTOM" tickLabelGap="1.0" tickUnit="1.0" upperBound="11.0" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis fx:id="ALCRLineChartY" label="\%" side="LEFT" upperBound="1.75" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Rectangle fx:id="ALCRRectangle1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" stroke="TRANSPARENT" strokeType="INSIDE" width="593.0">
+                           <effect>
+                              <DropShadow offsetX="5.0" offsetY="5.0">
+                                 <color>
+                                    <Color opacity="0.25" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Rectangle>
+                        <Text fx:id="ACPSInfo1" layoutX="90.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." wrappingWidth="411.10809540748596">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="HomesSoldInfoTitle1" layoutX="205.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info On Graph Contents" textAlignment="CENTER" wrappingWidth="181.33676147460938">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+              </items>
                <effect>
                   <DropShadow offsetX="5.0" offsetY="5.0">
                      <color>
-                        <Color opacity="0.25" />
+                        <Color opacity="0.25303950905799866" />
                      </color>
                   </DropShadow>
                </effect>
-            </Rectangle>
-            <Rectangle fx:id="ATMRectangle" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" layoutX="455.0" layoutY="305.0" stroke="TRANSPARENT" strokeType="INSIDE" width="415.0">
+            </SplitPane>
+            <SplitPane fx:id="ATMSplitPane" dividerPositions="0.9221" layoutX="455.0" layoutY="303.0" orientation="VERTICAL" prefHeight="248.0" prefWidth="415.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Rectangle fx:id="ATMRectangle" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" stroke="TRANSPARENT" strokeType="INSIDE" width="415.0">
+                           <effect>
+                              <DropShadow offsetX="5.0" offsetY="5.0">
+                                 <color>
+                                    <Color opacity="0.25" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Rectangle>
+                        <LineChart fx:id="ATMLineChart" layoutX="-1.0" layoutY="2.0" prefHeight="221.0" prefWidth="404.0" title="Average Time on Market">
+                           <xAxis>
+                              <NumberAxis fx:id="ATMLineChartX" minorTickLength="0.0" side="BOTTOM" tickLabelGap="1.0" tickUnit="1.0" upperBound="11.0" />
+                           </xAxis>
+                           <yAxis>
+                              <NumberAxis fx:id="ATMLineChartY" label="Days" side="LEFT" upperBound="75.0" />
+                           </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Rectangle fx:id="ATMRectangle1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" stroke="TRANSPARENT" strokeType="INSIDE" width="415.0">
+                           <effect>
+                              <DropShadow offsetX="5.0" offsetY="5.0">
+                                 <color>
+                                    <Color opacity="0.25" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Rectangle>
+                        <Text fx:id="ATMInfo" layoutX="41.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." wrappingWidth="331.9080832004547">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="ATMInfoTitle" layoutX="147.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info On Graph Contents" textAlignment="CENTER" wrappingWidth="118.13668823242188">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+              </items>
                <effect>
                   <DropShadow offsetX="5.0" offsetY="5.0">
                      <color>
-                        <Color opacity="0.25" />
+                        <Color opacity="0.24696049094200134" />
                      </color>
                   </DropShadow>
                </effect>
-            </Rectangle>
-            <Rectangle fx:id="LCRectangle" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" layoutX="888.0" layoutY="305.0" stroke="TRANSPARENT" strokeType="INSIDE" width="415.0">
+            </SplitPane>
+            <SplitPane fx:id="ACPSSplitPane" dividerPositions="0.9221" layoutX="59.0" layoutY="30.0" orientation="VERTICAL" prefHeight="255.0" prefWidth="593.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Rectangle fx:id="ACPSRectangle" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" stroke="TRANSPARENT" strokeType="INSIDE" width="593.0">
+                           <effect>
+                              <DropShadow offsetX="5.0" offsetY="5.0">
+                                 <color>
+                                    <Color opacity="0.25" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Rectangle>
+                        <LineChart fx:id="ACPSLineChart" layoutX="3.0" layoutY="1.0" prefHeight="234.0" prefWidth="575.0" title="Average Commission Per Sale">
+                          <xAxis>
+                            <NumberAxis fx:id="ACPSLineChartX" minorTickLength="0.0" prefHeight="24.0" prefWidth="299.0" side="BOTTOM" tickLabelGap="1.0" tickUnit="1.0" upperBound="11.0" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis fx:id="ACPSLineChartY" label="\$" lowerBound="13000.0" minorTickCount="3" side="LEFT" upperBound="26000.0" />
+                          </yAxis>
+                        </LineChart>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                     <children>
+                        <Rectangle fx:id="ACPSRectangle1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="244.0" stroke="TRANSPARENT" strokeType="INSIDE" width="593.0">
+                           <effect>
+                              <DropShadow offsetX="5.0" offsetY="5.0">
+                                 <color>
+                                    <Color opacity="0.25" />
+                                 </color>
+                              </DropShadow>
+                           </effect>
+                        </Rectangle>
+                        <Text fx:id="ACPSInfoTitle" layoutX="191.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info On Graph Contents" textAlignment="CENTER" wrappingWidth="210.13668823242188">
+                           <font>
+                              <Font name="Calibri" size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fx:id="ACPSInfo" layoutX="91.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." wrappingWidth="411.10809540748596">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+              </items>
                <effect>
                   <DropShadow offsetX="5.0" offsetY="5.0">
                      <color>
-                        <Color opacity="0.25" />
+                        <Color opacity="0.24696049094200134" />
                      </color>
                   </DropShadow>
                </effect>
-            </Rectangle>
-            <LineChart fx:id="ACPSLineChart" layoutX="59.0" layoutY="30.0" prefHeight="234.0" prefWidth="575.0" title="Average Commission Per Sale">
-              <xAxis>
-                <NumberAxis fx:id="ACPSLineChartX" minorTickLength="0.0" prefHeight="24.0" prefWidth="299.0" side="BOTTOM" tickLabelGap="1.0" tickUnit="1.0" upperBound="11.0" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis fx:id="ACPSLineChartY" side="LEFT" />
-              </yAxis>
-            </LineChart>
-            <LineChart fx:id="ATMLineChart" layoutX="456.0" layoutY="307.0" prefHeight="221.0" prefWidth="404.0" title="Average Time on Market">
-               <xAxis>
-                  <NumberAxis fx:id="ATMLineChartX" minorTickLength="0.0" side="BOTTOM" tickLabelGap="1.0" tickUnit="1.0" upperBound="11.0" />
-               </xAxis>
-               <yAxis>
-                  <NumberAxis fx:id="ATMLineChartY" side="LEFT" />
-               </yAxis>
-            </LineChart>
-            <LineChart fx:id="ALCRLineChart" layoutX="673.0" layoutY="30.0" prefHeight="223.0" prefWidth="575.0" title="Appointment-Listing Conversion Rate">
-               <xAxis>
-                  <NumberAxis fx:id="ALCRLineChartX" minorTickLength="0.0" prefHeight="12.0" prefWidth="413.0" side="BOTTOM" tickLabelGap="1.0" tickUnit="1.0" upperBound="11.0" />
-               </xAxis>
-               <yAxis>
-                  <NumberAxis fx:id="ALCRLineChartY" side="LEFT" />
-               </yAxis>
-            </LineChart>
-            <LineChart fx:id="LCLineChart" layoutX="888.0" layoutY="306.0" prefHeight="221.0" prefWidth="404.0" title="Listings Closed">
-               <xAxis>
-                  <NumberAxis fx:id="LCLineChartX" minorTickLength="0.0" side="BOTTOM" tickLabelGap="1.0" tickUnit="1.0" upperBound="11.0" />
-               </xAxis>
-               <yAxis>
-                  <NumberAxis fx:id="LCLineChartY" side="LEFT" />
-               </yAxis>
-            </LineChart>
-            <SplitPane dividerPositions="0.913961038961039" layoutX="22.0" layoutY="303.0" orientation="VERTICAL" prefHeight="248.0" prefWidth="415.0">
+            </SplitPane>
+            <SplitPane fx:id="HomesSoldSplitPane" dividerPositions="0.9221" layoutX="22.0" layoutY="303.0" orientation="VERTICAL" prefHeight="248.0" prefWidth="415.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="158.0">
                      <children>
@@ -150,12 +302,12 @@
                               </DropShadow>
                            </effect>
                         </Rectangle>
-                        <LineChart fx:id="HomesSoldLineChart" prefHeight="221.0" prefWidth="404.0" title="Percent of Homes Sold from Inventory">
+                        <LineChart fx:id="HomesSoldLineChart" layoutX="-3.0" layoutY="2.0" prefHeight="221.0" prefWidth="404.0" title="Percent of Homes Sold from Inventory">
                            <xAxis>
                               <NumberAxis fx:id="HomesSoldLineChartX" minorTickLength="0.0" side="BOTTOM" tickLabelGap="1.0" tickUnit="1.0" upperBound="11.0" />
                            </xAxis>
                            <yAxis>
-                              <NumberAxis fx:id="HomesSoldLineChartY" side="LEFT" />
+                              <NumberAxis fx:id="HomesSoldLineChartY" label="\%" side="LEFT" upperBound="45.0" />
                            </yAxis>
                         </LineChart>
                      </children>
@@ -171,12 +323,12 @@
                               </DropShadow>
                            </effect>
                         </Rectangle>
-                        <Text layoutX="42.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." wrappingWidth="331.9080832004547">
+                        <Text fx:id="HomesSoldInfo" layoutX="42.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." wrappingWidth="331.9080832004547">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Text>
-                        <Text layoutX="147.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info On Graph Contents" textAlignment="CENTER" wrappingWidth="118.13668823242188">
+                        <Text fx:id="HomesSoldInfoTitle" layoutX="147.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info On Graph Contents" textAlignment="CENTER" wrappingWidth="118.13668823242188">
                            <font>
                               <Font name="Calibri" size="18.0" />
                            </font>
@@ -196,14 +348,23 @@
       </Pane>
    </center>
    <bottom>
-      <Rectangle fx:id="ASFRectangle" arcHeight="5.0" arcWidth="5.0" fill="#34aca0" height="45.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1339.0" BorderPane.alignment="CENTER">
-         <effect>
-            <DropShadow offsetX="5.0" offsetY="5.0">
-               <color>
-                  <Color opacity="0.25" />
-               </color>
-            </DropShadow>
-         </effect>
-      </Rectangle>
+      <Pane prefHeight="46.0" prefWidth="1327.0" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle fx:id="ASFRectangle" arcHeight="5.0" arcWidth="5.0" fill="#34aca0" height="52.0" layoutX="-12.0" layoutY="-2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1351.0">
+               <effect>
+                  <DropShadow offsetX="5.0" offsetY="5.0">
+                     <color>
+                        <Color opacity="0.25" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Rectangle>
+            <Text fx:id="HomesSoldInfoTitle2" fill="WHITE" layoutX="381.0" layoutY="29.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Each graph has a slider. See what it reveals." textAlignment="CENTER" wrappingWidth="564.5367736816406">
+               <font>
+                  <Font name="Calibri" size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </bottom>
 </BorderPane>
