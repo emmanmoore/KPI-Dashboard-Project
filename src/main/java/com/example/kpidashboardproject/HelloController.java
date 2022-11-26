@@ -1,6 +1,7 @@
 package com.example.kpidashboardproject;
 
 import javafx.fxml.FXML;
+import javafx.scene.chart.LineChart;
 import javafx.scene.control.Label;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -112,7 +113,7 @@ public class HelloController {
                 //xychart.data(horizontal, vertical)
             }
         }
-        ALCRLineChart.getData().add(ConversionRateSeries);
+        ALCRLineChart.getData().add(ALCRSeries);
 
         //AVERAGE COMMISSION PER SALE LINE CHART
         //creating chart
@@ -122,12 +123,12 @@ public class HelloController {
         XYChart.Series ACPSSeries = new XYChart.Series();
 
         //setting arrays
-        int[] MonthNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int[] MonthNum_1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
         int[] CommissionPerSale = {16703, 21086, 20506, 20204, 24003, 25690, 14380, 17840, 15469, 14897,
                 20870, 21304};
         //iterating through arrays to make a series
-        for(int num : MonthNum){
+        for(int num : MonthNum_1){
             for(int com : CommissionPerSale){
                 ACPSSeries.getData().add(new XYChart.Data<Number, Number>(num, com));
                 //xychart.data(horizontal, vertical)
@@ -143,11 +144,11 @@ public class HelloController {
         XYChart.Series LCSeries = new XYChart.Series();
 
         //setting arrays
-        int[] MonthNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int[] MonthNum_2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
         int[] listingsClosed = {196, 76, 97, 128, 135, 112, 86, 93, 81, 73, 94, 108};
         //iterating through arrays to make a series
-        for(int num : MonthNum){
+        for(int num : MonthNum_2){
             for(int listing : listingsClosed){
                 LCSeries.getData().add(new XYChart.Data<Number, Number>(num, listing));
                 //xychart.data(horizontal, vertical)
@@ -163,11 +164,11 @@ public class HelloController {
         XYChart.Series ATMSeries = new XYChart.Series();
 
         //setting arrays
-        int[] MonthNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int[] MonthNum_3 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
         int[] AverageListingTimeonMarket = {76, 77, 63, 78, 69, 81, 64, 77, 65, 78, 81, 83};
         //iterating through arrays to make a series
-        for(int num : MonthNum){
+        for(int num : MonthNum_3){
             for(int time : AverageListingTimeonMarket){
                 ATMSeries.getData().add(new XYChart.Data<Number, Number>(num, time));
                 //xychart.data(horizontal, vertical)
@@ -183,11 +184,11 @@ public class HelloController {
         XYChart.Series HomesSoldSeries = new XYChart.Series();
 
         //setting arrays
-        int[] MonthNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+        int[] MonthNum_4 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
         int[] SoldHomesPerInventory = {37, 24,27, 33, 34, 29, 21, 26, 31, 34, 28, 33};
         //iterating through arrays to make a series
-        for(int num : MonthNum){
+        for(int num : MonthNum_4){
             for(int sold : SoldHomesPerInventory){
                 HomesSoldSeries.getData().add(new XYChart.Data<Number, Number>(num, sold));
                 //xychart.data(horizontal, vertical)
