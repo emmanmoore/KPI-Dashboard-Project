@@ -5,9 +5,10 @@ import java.math.RoundingMode;
 import java.text.NumberFormat;
 
 import javafx.fxml.FXML;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.control.Label;
 import javafx.scene.chart.LineChart;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+import javafx.scene.control.Label;
 import javafx.scene.control.SplitPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -124,6 +125,8 @@ public class HelloController {
     @FXML
     private AnchorPane TopSplitPaneRightAnchor;
 
+    XYChart.Series series = new XYChart.Series();
+
 //    LineChart<Number,Number lineChart = new LineChart<Number,Number>(xAxis,yAxis);
 //
 //    XYChart.Series series = new XYChart.Series();
@@ -132,7 +135,6 @@ public class HelloController {
 //        series.getData().add(new XYChart.Data(xArray[i], yArray[i]);
 //    }
 //    lineChart.getData().add(series);
-
 
     private static final NumberFormat currency = NumberFormat.getCurrencyInstance();
     private static final NumberFormat percent = NumberFormat.getPercentInstance();
@@ -145,25 +147,13 @@ public class HelloController {
     double[] ConversionRate = {0.8, 0.9, 1.4, 0.8, 1.1, 0.7, 0.6, 0.3, 0.8, 0.6, 1.2, 0.9};
 
     int[] CommissionPerSale = {16703, 21086, 20506, 20204, 24003, 25690, 14380, 17840, 15469, 14897,
-    20870, 21304};
+            20870, 21304};
 
-    int[] SoldHomesPerInventory = {37, 24,27, 33, 34, 29, 21, 26, 31, 34, 28, 33};
+    int[] SoldHomesPerInventory = {37, 24, 27, 33, 34, 29, 21, 26, 31, 34, 28, 33};
 
     int[] listingsClosed = {196, 76, 97, 128, 135, 112, 86, 93, 81, 73, 94, 108};
 
-
-
-
-    @FXML
-    private Label welcomeText;
-
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
-}
-
-
+//    XYChart.Series series = new XYChart.Series();
 
 //comments
 //import java.util.ArrayList;
@@ -279,3 +269,4 @@ public class HelloController {
 //    }
 //
 //}
+}
