@@ -69,7 +69,7 @@
       <Pane fx:id="CenterPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
             <Rectangle fx:id="BackgroundGray" arcHeight="5.0" arcWidth="5.0" fill="#ececec" height="633.0" layoutX="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="1333.0" />
-            <SplitPane fx:id="LCSplitPane" dividerPositions="0.9221" layoutX="888.0" layoutY="303.0" orientation="VERTICAL" prefHeight="248.0" prefWidth="415.0">
+            <SplitPane fx:id="LCSplitPane" dividerPositions="0.9877717391304349" layoutX="888.0" layoutY="303.0" orientation="VERTICAL" prefHeight="248.0" prefWidth="415.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
@@ -103,12 +103,12 @@
                               </DropShadow>
                            </effect>
                         </Rectangle>
-                        <Text fx:id="LCInfoTitle" layoutX="157.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info On Graph Contents" textAlignment="CENTER" wrappingWidth="118.13668823242188">
+                        <Text fx:id="LCInfoTitle" layoutX="157.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="118.13668823242188">
                            <font>
                               <Font name="Calibri" size="18.0" />
                            </font>
                         </Text>
-                        <Text fx:id="LCInfo" layoutX="51.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." wrappingWidth="331.9080832004547">
+                        <Text fx:id="LCInfo" layoutX="51.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Realtors keep track of how many client listings have been closed in order to gauge how efficiently the agency is selling homes. A sold house will not be considered a closed listing until all parties’ legal paperwork is completed and the title of ownership transfers from the seller to the buyer." wrappingWidth="331.9080832004547">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -124,7 +124,7 @@
                   </DropShadow>
                </effect>
             </SplitPane>
-            <SplitPane fx:id="ALCRSplitPane" dividerPositions="0.9221" layoutX="673.0" layoutY="30.0" orientation="VERTICAL" prefHeight="255.0" prefWidth="593.0">
+            <SplitPane fx:id="ALCRSplitPane" dividerPositions="0.9881109643328931" layoutX="673.0" layoutY="30.0" orientation="VERTICAL" prefHeight="255.0" prefWidth="593.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
@@ -158,12 +158,12 @@
                               </DropShadow>
                            </effect>
                         </Rectangle>
-                        <Text fx:id="ACPSInfo1" layoutX="90.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." wrappingWidth="411.10809540748596">
+                        <Text fx:id="ACPSInfo1" layoutX="90.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The conversion rate refers to the rate at which real estate leads become clients. It’s important for a real estate agency to track how many appointments with potential clients become clients who list their house to be sold with the agency.The conversion rate = number of clients / number of leads generated" wrappingWidth="411.10809540748596">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Text>
-                        <Text fx:id="HomesSoldInfoTitle1" layoutX="205.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info On Graph Contents" textAlignment="CENTER" wrappingWidth="181.33676147460938">
+                        <Text fx:id="HomesSoldInfoTitle1" layoutX="205.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="181.33676147460938">
                            <font>
                               <Font name="Calibri" size="18.0" />
                            </font>
@@ -179,7 +179,7 @@
                   </DropShadow>
                </effect>
             </SplitPane>
-            <SplitPane fx:id="ATMSplitPane" dividerPositions="0.9221" layoutX="455.0" layoutY="303.0" orientation="VERTICAL" prefHeight="248.0" prefWidth="415.0">
+            <SplitPane fx:id="ATMSplitPane" dividerPositions="0.9877717391304349" layoutX="455.0" layoutY="303.0" orientation="VERTICAL" prefHeight="248.0" prefWidth="415.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
@@ -213,12 +213,12 @@
                               </DropShadow>
                            </effect>
                         </Rectangle>
-                        <Text fx:id="ATMInfo" layoutX="41.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." wrappingWidth="331.9080832004547">
+                        <Text fx:id="ATMInfo" layoutX="41.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The average time from listing to closing for a house in North Carolina is around seventy six days. An agency may track average listing times to analyze their overall process efficiency and consider improvements to decrease this average." wrappingWidth="331.9080832004547">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Text>
-                        <Text fx:id="ATMInfoTitle" layoutX="147.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info On Graph Contents" textAlignment="CENTER" wrappingWidth="118.13668823242188">
+                        <Text fx:id="ATMInfoTitle" layoutX="147.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="118.13668823242188">
                            <font>
                               <Font name="Calibri" size="18.0" />
                            </font>
@@ -234,7 +234,7 @@
                   </DropShadow>
                </effect>
             </SplitPane>
-            <SplitPane fx:id="ACPSSplitPane" dividerPositions="0.9221" layoutX="59.0" layoutY="30.0" orientation="VERTICAL" prefHeight="255.0" prefWidth="593.0">
+            <SplitPane fx:id="ACPSSplitPane" dividerPositions="0.9801849405548217" layoutX="59.0" layoutY="30.0" orientation="VERTICAL" prefHeight="255.0" prefWidth="593.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                      <children>
@@ -268,12 +268,12 @@
                               </DropShadow>
                            </effect>
                         </Rectangle>
-                        <Text fx:id="ACPSInfoTitle" layoutX="191.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info On Graph Contents" textAlignment="CENTER" wrappingWidth="210.13668823242188">
+                        <Text fx:id="ACPSInfoTitle" layoutX="191.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="210.13668823242188">
                            <font>
                               <Font name="Calibri" size="18.0" />
                            </font>
                         </Text>
-                        <Text fx:id="ACPSInfo" layoutX="91.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." wrappingWidth="411.10809540748596">
+                        <Text fx:id="ACPSInfo" layoutX="91.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Commissions are the percentage value of what realtors earn from the total sale value of a closed listing. The average commission per sale reveals the average percentage of monthly house sale revenue that realtors acquired." wrappingWidth="411.10809540748596">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -289,7 +289,7 @@
                   </DropShadow>
                </effect>
             </SplitPane>
-            <SplitPane fx:id="HomesSoldSplitPane" dividerPositions="0.9221" layoutX="22.0" layoutY="303.0" orientation="VERTICAL" prefHeight="248.0" prefWidth="415.0">
+            <SplitPane fx:id="HomesSoldSplitPane" dividerPositions="0.9877717391304349" layoutX="22.0" layoutY="303.0" orientation="VERTICAL" prefHeight="248.0" prefWidth="415.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="140.0" prefWidth="158.0">
                      <children>
@@ -323,12 +323,12 @@
                               </DropShadow>
                            </effect>
                         </Rectangle>
-                        <Text fx:id="HomesSoldInfo" layoutX="42.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat." wrappingWidth="331.9080832004547">
+                        <Text fx:id="HomesSoldInfo" layoutX="42.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory refers to the number of properties the realty agency currently has on the market. By dividing the agency’s inventory by the number of homes sold within a month’s time, an agency can understand how the housing market is performing." wrappingWidth="331.9080832004547">
                            <font>
                               <Font size="15.0" />
                            </font>
                         </Text>
-                        <Text fx:id="HomesSoldInfoTitle" layoutX="147.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Info On Graph Contents" textAlignment="CENTER" wrappingWidth="118.13668823242188">
+                        <Text fx:id="HomesSoldInfoTitle" layoutX="147.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Description" textAlignment="CENTER" wrappingWidth="118.13668823242188">
                            <font>
                               <Font name="Calibri" size="18.0" />
                            </font>
