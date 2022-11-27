@@ -2,206 +2,155 @@ package com.example.kpidashboardproject;
 
 import javafx.fxml.FXML;
 import javafx.scene.chart.LineChart;
-import javafx.scene.control.Label;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
-import javafx.scene.control.Slider;
-import javafx.scene.control.TextField;
-import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 
 public class HelloController {
-    @FXML
-    private Label welcomeText;
+
+    /*
+        Code block declaring all FXML variables corresponding to each FXML control component
+        present in the view
+     */
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    private LineChart<Number, Number> ACPSLineChart;
+
+
+    @FXML
+    private LineChart<Number, Number> ALCRLineChart;
+
+    @FXML
+    private LineChart<Number, Number> ATMLineChart;
+
+    @FXML
+    private LineChart<Number, Number> HomesSoldLineChart;
+
+    @FXML
+    private LineChart<Number, Number> LCLineChart;
+
+    // Integer Array containing the month numbers, corresponding to each month Jan-Dec, respectively.
+    private final int[] MonthNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+
+    /*
+        Integer Array containing the monthly Average Commission per Sale, corresponding to each month,
+        Jan-Dec respectively.
+   */
+    private final int[] CommissionPerSale = {16703, 21086, 20506, 20204, 24003, 25690, 14380, 17840, 15469, 14897,
+                                       20870, 21304};
+
+    /*
+       Double Array Containing the Monthly Appointment to Listing conversion rates, corresponding to each month,
+       Jan-Dec respectively.
+    */
+    private final double[] ConversionRate = {0.8, 0.9, 1.4, 0.8, 1.1, 0.7, 0.6, 0.3, 0.8, 0.6, 1.2, 0.9};
+
+    /*
+       Integer Array Containing the Percent of Homes Sold from Inventory, corresponding to each month,
+       Jan-Dec respectively.
+    */
+    private final int [] SoldHomesPerInventory = {37, 24,27, 33, 34, 29, 21, 26, 31, 34, 28, 33};
+
+    /*
+       Integer Array Containing the Average Time on Market, corresponding to each month,
+       Jan-Dec respectively.
+    */
+    private final int [] AverageListingTimeOnMarket = {76, 77, 63, 78, 69, 81, 64, 77, 65, 78, 81, 83};
+
+    /*
+       Integer Array Containing the Monthly Number of Listings Closed, corresponding to each month,
+       Jan-Dec respectively.
+    */
+    private final int [] ListingsClosed = {196, 76, 97, 128, 135, 112, 86, 93, 81, 73, 94, 108};
+
+
+
+    /*
+        Default initialize method called when the FXML loader application is invoked in the
+        application java class (driver code) which does the following:
+            1. Create individual Series objects (XYChart.Series Class) for each LineChart present in the FXML.
+            2. Populating each Series Objects with data points from their respective arrays.
+            3. Add/Assign the Series to the Chart.
+     */
+    public void initialize(){
+        // Declare and initialize an XYChartSeries object for the Average Commission Per Sale LineChart
+        XYChart.Series<Number, Number> acpsSeries = new XYChart.Series<>();
+
+        // Hide the legend for the specified Chart
+        ACPSLineChart.setLegendVisible(false);
+
+        /*
+           Iterate through both the monthNumber array and commission per sale array to populate
+           the individual data points of the series corresponding to the Average Commission Per Sale lineChart
+         */
+        for (int i = 0; i < MonthNum.length; i++){
+            acpsSeries.getData().add(new XYChart.Data<>(MonthNum[i], CommissionPerSale[i]));
+        }
+        // Assign the Series to the Average Commission Rate Per Sale Line Chart
+        ACPSLineChart.getData().add(acpsSeries);
+
+        // Declare and initialize an XYChartSeries object for the Appointment to Listing Conversion Rate
+        XYChart.Series<Number, Number> alcrSeries = new XYChart.Series<>();
+
+        // Hide the legend for the specified Chart
+        ALCRLineChart.setLegendVisible(false);
+
+        /*
+           Iterate through both the monthNumber array and Appointment to Listing Conversion rate array to populate
+           the individual data points of the series corresponding to the Appointment to listing conversion
+           rate lineChart
+         */
+        for (int i = 0; i < MonthNum.length; i++){
+            alcrSeries.getData().add(new XYChart.Data<>(MonthNum[i], ConversionRate[i]));
+        }
+        // Assign the Series to the Appointment to Listing Conversion Rate Chart
+        ALCRLineChart.getData().add(alcrSeries);
+
+
+        // Declare and initialize an XYChartSeries object for the Percent of Homes Sold from inventory
+        XYChart.Series<Number, Number> homesSoldSeries = new XYChart.Series<>();
+
+        // Hide the legend for the specified Chart
+        HomesSoldLineChart.setLegendVisible(false);
+
+        /*
+           Iterate through both the monthNumber array and Homes Sold Per Inventory array to populate
+           the individual data points of the series corresponding to the Homes Sold LineChart
+         */
+        for (int i = 0; i < MonthNum.length; i++){
+            homesSoldSeries.getData().add(new XYChart.Data<>(MonthNum[i], SoldHomesPerInventory[i]));
+        }
+        // Assign the Series to the Homes Sold Line Chart
+        HomesSoldLineChart.getData().add(homesSoldSeries);
+
+        // Declare and initialize an XYChartSeries object for the Average Time on Market
+        XYChart.Series<Number, Number> avgTimeOnMarketSeries = new XYChart.Series<>();
+
+        // Hide the legend for the specified Chart
+        ATMLineChart.setLegendVisible(false);
+
+        /*
+           Iterate through both the monthNumber array and Average Time on Market Array to populate
+           the individual data points of the series corresponding to the ATM LineChart
+         */
+        for (int i = 0; i < MonthNum.length; i++){
+            avgTimeOnMarketSeries.getData().add(new XYChart.Data<>(MonthNum[i], AverageListingTimeOnMarket[i]));
+        }
+        // Assign the Series to the Average Time on Market Line Chart
+        ATMLineChart.getData().add(avgTimeOnMarketSeries);
+
+        // Declare and initialize an XYChartSeries object for the Monthly Number of Listings Closed
+        XYChart.Series<Number, Number> listingsClosedSeries = new XYChart.Series<>();
+
+        // Hide the legend for the specified Chart
+        LCLineChart.setLegendVisible(false);
+
+        /*
+           Iterate through both the monthNumber array and Monthly Number of Listings Closed Array to populate
+           the individual data points of the series corresponding to the Listings Closed Line Chart
+         */
+        for (int i = 0; i < MonthNum.length; i++){
+            listingsClosedSeries.getData().add(new XYChart.Data<>(MonthNum[i], ListingsClosed[i]));
+        }
+        // Assign the Series to the Monthly listings Closed Line Chart
+        LCLineChart.getData().add(listingsClosedSeries);
     }
-
-    ////////////////////////////////////////////////////
-    ////////NOTES ON HOW TO SET UP GRAPHS
-    ////////////////////////////////////////////////////
-    //defining axes
-    //uses NumberAxis class and subclass Axis to represent numerical values
-    //from import statement
-    //final NumberAxis xAxis = new NumberAxis();
-    //final NumberAxis yAxis = new NumberAxis();
-    //do we want label for axes to be on graph or in splitscene?
-    //if on graph:
-    //xAxis.setLabel("Number of Month");
-    //^would be separate label
-
-    //from what I'm gathering, all the code below will be duplicated
-    //for each of the 5 charts
-    //since the x/y axes variables can be the same, but will just need to be updated
-    //with new data for each chart
-    //THEREFORE
-    //in best interest to make series names related to linechart fx:ids for easy tracking
-
-    //creating chart:
-    //final LineChart<Number, Number> ConversionRateChart = new LineChart<Number, Number>(xAxis, yAxis);
-    //example code sets title for chart separately, but we already set these in scenebuilder
-
-    //define series
-    //must create series of data using XYChart.Series class to assign data to chart
-    //XYChart.Series ConversionRateSeries = new XYChart.Series();
-    //if we want to mark the data separately like in oracle doc,
-    // we can use:
-    //Series.setName("real estate");
-    //otherwise, no need (it also may be confusing since it shows on x axis and x is months
-
-    //populating series with data:
-    //ex way: (long way)
-    //series.getData().add(new XYChart.Data(1,23));
-    //other way:
-
-    //setting arrays - will be different for each graph (except for month)
-    //int[] MonthNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-
-    //double[] ConversionRate = {0.8, 0.9, 1.4, 0.8, 1.1, 0.7, 0.6, 0.3, 0.8, 0.6, 1.2, 0.9};
-
-    //for(int num : MonthNum){
-        //for(double rate : ConversionRate){
-            //ConversionRateSeries.getData().add(new XYChart.Data<Number, Number>(num, rate));
-            //the xychart.data goes (horizontal, vertical) so -> (month, y)
-        //}
-    //}
-    //ConversionRateChart.getData().add(ConversionRateSeries);
-//            series2.getData().add(new XYChart.Data<Number, Number>(val, val));
-//        // add the series to the graph
-//        graph2.getData().add(series2);
-
-    ////////////////////////////////
-    ////////INITIALIZE
-    ///////////////////////////////
-    public void initialize() {
-        //fx:ids for JAVAFX file:
-        //appointment-listing conversion rate: ALCRLineChart
-        //average commission per sale: ACPSLineChart
-        //average square foot: ASFLineChartY////REMOVED
-        //average price per square foot: ASFPriceLineChart///// REMOVED
-        //listings closed: LCLineChart
-        //average time on market: ATMLineChart
-        //percentage of homes sold from inventory: HomesSoldLineChart
-        //toggle view button: ToggleViewButton
-        //KPI in title "kpi dashboard": KPITitleText
-        //dashboard in title "kpi dashboard": DashboardTitleText
-        //12 month real estate analysis title: RealEstateTitleText
-        //background rectangle for average commission per sale: ACPSRectangle
-
-        //setting axes variables
-        final NumberAxis xAxis = new NumberAxis();
-        final NumberAxis yAxis = new NumberAxis();
-
-        //APPT LISTING CONVERSION RATE LINE CHART
-        //creating chart: appt listing to conversion rate
-        final LineChart<Number, Number> ALCRLineChart = new LineChart<Number, Number>(xAxis, yAxis);
-
-        //define series: conversion rate
-        XYChart.Series ALCRSeries = new XYChart.Series();
-
-        //setting arrays
-        int[] MonthNum = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-
-        double[] ConversionRate = {0.8, 0.9, 1.4, 0.8, 1.1, 0.7, 0.6, 0.3, 0.8, 0.6, 1.2, 0.9};
-        //iterating through arrays to make a series
-        for(int num : MonthNum){
-            for(double rate : ConversionRate){
-                ALCRSeries.getData().add(new XYChart.Data<Number, Number>(num, rate));
-                //xychart.data(horizontal, vertical)
-            }
-        }
-        ALCRLineChart.getData().add(ALCRSeries);
-
-        //AVERAGE COMMISSION PER SALE LINE CHART
-        //creating chart
-        final LineChart<Number, Number> ACPSLineChart = new LineChart<Number, Number>(xAxis, yAxis);
-
-        //define series: conversion rate
-        XYChart.Series ACPSSeries = new XYChart.Series();
-
-        //setting arrays
-        int[] MonthNum_1 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-
-        int[] CommissionPerSale = {16703, 21086, 20506, 20204, 24003, 25690, 14380, 17840, 15469, 14897,
-                20870, 21304};
-        //iterating through arrays to make a series
-        for(int num : MonthNum_1){
-            for(int com : CommissionPerSale){
-                ACPSSeries.getData().add(new XYChart.Data<Number, Number>(num, com));
-                //xychart.data(horizontal, vertical)
-            }
-        }
-        ACPSLineChart.getData().add(ACPSSeries);
-
-        //LISTINGS CLOSED LINE CHART
-        //creating chart
-        final LineChart<Number, Number> LCLineChart = new LineChart<Number, Number>(xAxis, yAxis);
-
-        //define series: conversion rate
-        XYChart.Series LCSeries = new XYChart.Series();
-
-        //setting arrays
-        int[] MonthNum_2 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-
-        int[] listingsClosed = {196, 76, 97, 128, 135, 112, 86, 93, 81, 73, 94, 108};
-        //iterating through arrays to make a series
-        for(int num : MonthNum_2){
-            for(int listing : listingsClosed){
-                LCSeries.getData().add(new XYChart.Data<Number, Number>(num, listing));
-                //xychart.data(horizontal, vertical)
-            }
-        }
-        LCLineChart.getData().add(LCSeries);
-
-        //AVERAGE TIME ON MARKET CHART
-        //creating chart
-        final LineChart<Number, Number> ATMLineChart = new LineChart<Number, Number>(xAxis, yAxis);
-
-        //define series: conversion rate
-        XYChart.Series ATMSeries = new XYChart.Series();
-
-        //setting arrays
-        int[] MonthNum_3 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-
-        int[] AverageListingTimeonMarket = {76, 77, 63, 78, 69, 81, 64, 77, 65, 78, 81, 83};
-        //iterating through arrays to make a series
-        for(int num : MonthNum_3){
-            for(int time : AverageListingTimeonMarket){
-                ATMSeries.getData().add(new XYChart.Data<Number, Number>(num, time));
-                //xychart.data(horizontal, vertical)
-            }
-        }
-        ATMLineChart.getData().add(ATMSeries);
-
-        //HOMES SOLD LINE CHART
-        //creating chart
-        final LineChart<Number, Number> HomesSoldLineChart = new LineChart<Number, Number>(xAxis, yAxis);
-
-        //define series: conversion rate
-        XYChart.Series HomesSoldSeries = new XYChart.Series();
-
-        //setting arrays
-        int[] MonthNum_4 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
-
-        int[] SoldHomesPerInventory = {37, 24,27, 33, 34, 29, 21, 26, 31, 34, 28, 33};
-        //iterating through arrays to make a series
-        for(int num : MonthNum_4){
-            for(int sold : SoldHomesPerInventory){
-                HomesSoldSeries.getData().add(new XYChart.Data<Number, Number>(num, sold));
-                //xychart.data(horizontal, vertical)
-            }
-        }
-        ATMLineChart.getData().add(HomesSoldSeries);
-    }
-    ///////////////////////
-    ////end initialize
-    ///////////////////////
 }
-//////////////////////////////////////////////////
-///////////////////////////////////////////////
-//END OF CONTROLLER CLASS
-/////////////////////////////////////////////
-//
