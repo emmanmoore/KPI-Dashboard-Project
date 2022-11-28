@@ -13,8 +13,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
         Parent root =
                 FXMLLoader.load(getClass().getResource("KPIDashboard.fxml"));
-//        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("KPIDashboard.fxml"));
-//        Scene scene = new Scene(fxmlLoader.load(), 1327, 741);
+
 
         Scene scene = new Scene(root); // Attach Scene graph to the new Scene whose root node is specified above
         stage.setScene(scene); // Attach the scene to the Stage (Application Window)
